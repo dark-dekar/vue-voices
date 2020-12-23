@@ -1,0 +1,41 @@
+<template>
+  <div id="app">
+    <MainToolBar/>
+    <ContentArea/>
+    {{ $t("toolbar.asc") }}
+  </div>
+</template>
+
+<script>
+import ContentArea from './modules/ContentArea/ContentArea';
+import MainToolBar from './modules/MainToolBar/MainToolBar';
+
+export default {
+  name: 'App',
+  components: {
+    ContentArea,
+    MainToolBar
+  }
+}
+</script>
+
+<style lang="scss">
+@import './resources/styles/colors.scss';
+#app {
+  background: $background-color;
+  height: 100%;
+  width: 100%;
+  color: $main-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+</style>
