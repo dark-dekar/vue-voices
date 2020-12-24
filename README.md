@@ -1,4 +1,4 @@
-# voice-stack
+# Vue Voices
 
 ## About the tech test App
 Core Framework: Vue.js
