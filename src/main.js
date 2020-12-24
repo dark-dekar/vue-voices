@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import EN from './resources/i18n/en'
 import ES from './resources/i18n/es'
+import VoicesService from './services/VoicesService';
 
 Vue.config.productionTip = false
 
@@ -15,6 +16,7 @@ const messages = {
 }
 
 Vue.use(VueI18n)
+Vue.use(VoicesService)
 
 const i18n = new VueI18n({
   locale: 'en',
@@ -23,6 +25,7 @@ const i18n = new VueI18n({
 
 new Vue({
   i18n,
+  VoicesService,
   render: h => h(App)
 }).$mount('#app')
 
