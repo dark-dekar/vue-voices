@@ -25,5 +25,8 @@ export default {
 <style lang="scss">
 .content-area {
   overflow: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>

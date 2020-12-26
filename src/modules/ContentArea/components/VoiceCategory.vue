@@ -27,11 +27,16 @@ export default {
 
 <style lang="scss">
 .voice-category {
-    padding: 24px 74px;
+    padding: 24px 54px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
     .category-header {
         display: flex;
         align-items: center;
         margin-bottom: 20px;
+        margin-left: 20px;
 
         h3 {
             flex: 0;
@@ -48,6 +53,13 @@ export default {
             margin-left: 12px;
             color: #2B2B2B;
         }
+    }
+    .voice-list {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 0 24px;
     }
 }
 </style>

@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import './resources/styles/colors.scss';
-@import './resources/styles/customScrollBar.scss';
+@import '@/resources/styles/colors.scss';
+@import '@/resources/styles/customScrollBar.scss';
 
 #app {
   background: $background-color;
