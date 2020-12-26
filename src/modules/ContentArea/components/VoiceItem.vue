@@ -1,5 +1,5 @@
 <template>
-  <div :class="['voice-item', {'selected': isSelected}]" @click="changeSelection()">selected
+  <div :class="['voice-item', {'selected': isSelected}]" @click="changeSelection()">
       <div class="voice-icon">
           <img :src="getIcon(voice.icon)" :alt="voice.name">
       </div>
