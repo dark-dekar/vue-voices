@@ -1,5 +1,5 @@
 <template>
-  <div class="content-area">
+  <div class="content-area custom-scrollbar">
       <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
