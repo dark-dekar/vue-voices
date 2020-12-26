@@ -26,13 +26,15 @@ export default {
     .category-header {
         display: flex;
         align-items: center;
+        margin-bottom: 20px;
 
         h3 {
             flex: 0;
             margin: 0;
-            font-size: 20px;
+            font-size: 18px;
             text-transform: uppercase;
             color: #858585;
+            white-space: nowrap;
         }
         .divisor {
             flex: 1;

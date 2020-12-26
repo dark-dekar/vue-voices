@@ -2,7 +2,6 @@
   <div id="app">
     <MainToolBar/>
     <ContentArea/>
-    {{ $t("toolbar.asc") }}
   </div>
 </template>
 

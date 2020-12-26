@@ -1,7 +1,6 @@
 <template>
   <div>
-      <VoiceCategory title="blalblab" :voices="voices"/>
-      <VoiceCategory title="blalblab" :voices="voices"/>
+      <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
 
