@@ -5,17 +5,22 @@
           <div class="divisor"></div>
       </div>
       <div class="voice-list">
-          <span v-for="voice in voices" :key="voice.id"> {{voice.name}}</span>
+          <VoiceItem v-for="voice in voices" :key="voice.id" :voice="voice"/>
       </div>
   </div>
 </template>
 
 <script>
+import VoiceItem from './VoiceItem';
+
 export default {
   name: 'VoiceCategory',
   props: {
     title: String,
     voices: Array,
+  },
+  components: {
+      VoiceItem
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-area">
       <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.content-area {
+  overflow: auto;
+}
 </style>
