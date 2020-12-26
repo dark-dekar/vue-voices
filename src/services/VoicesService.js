@@ -7,9 +7,7 @@ class VoicesService {
 }
 
 export default {
-    install(Vue, options) {
-        console.info(Vue);
-        console.info(options);
+    install(Vue) {
         Vue.prototype.$voicesService = new VoicesService()
     }
 };

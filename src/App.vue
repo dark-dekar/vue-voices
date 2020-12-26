@@ -30,6 +30,7 @@ export default {
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,
