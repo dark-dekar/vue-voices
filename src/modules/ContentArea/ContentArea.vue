@@ -1,21 +1,32 @@
 <template>
-  <div>
-      Voices!!!
-      <button class="btn btn-primary" @click="bla">Test</button>
+  <div class="content-area custom-scrollbar">
+      <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
 
 <script>
+import VoiceCategory from './components/VoiceCategory';
 export default {
   name: 'ContentArea',
-  methods: {
-    bla: function() {
-      this.$i18n.locale = 'es';
+  data: function () {
+    return {
+      voices: []
     }
+  },
+  created() {
+    this.voices = this.$voicesService.getAllVoices();
+  },
+  components: {
+    VoiceCategory
   }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.content-area {
+  overflow: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 </style>

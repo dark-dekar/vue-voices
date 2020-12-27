@@ -2,7 +2,6 @@
   <div id="app">
     <MainToolBar/>
     <ContentArea/>
-    {{ $t("toolbar.asc") }}
   </div>
 </template>
 
@@ -20,16 +19,21 @@ export default {
 </script>
 
 <style lang="scss">
-@import './resources/styles/colors.scss';
+@import '@/resources/styles/colors.scss';
+@import '@/resources/styles/customScrollBar.scss';
+
 #app {
   background: $background-color;
   height: 100%;
   width: 100%;
   color: $main-color;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 html,

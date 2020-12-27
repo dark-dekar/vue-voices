@@ -4,7 +4,7 @@
 Core Framework: Vue.js
 Style Framework: Bootstrap
 CSS Preprocessor: SASS
-Languages: EN(Default) and ES, this value is taken form the browser info.
+Languages: EN(Default) and ES, this value is taken from the browser info.
 
 ## Project setup
 ```
