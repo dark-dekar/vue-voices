@@ -54,6 +54,7 @@ export default {
             color: #2B2B2B;
         }
     }
+    
     .voice-list {
         display: flex;
         flex: 1;
