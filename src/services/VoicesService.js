@@ -1,8 +1,8 @@
-import voidesData from '../resources/data/voices.json';
+import voicesData from '../resources/data/voices.json';
 
 class VoicesService {
     getAllVoices() {
-        return voidesData;
+        return voicesData;
     }
 }
 

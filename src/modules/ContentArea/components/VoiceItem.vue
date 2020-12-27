@@ -1,5 +1,5 @@
 <template>
-  <div :class="['voice-item', {'selected': isSelected}]" @click="changeSelection()">
+  <div :class="['voice-item', {'selected': isSelected}]" @click="toggleSelection()">
       <div class="voice-icon">
           <img :src="getIcon(voice.icon)" :alt="voice.name">
       </div>
@@ -22,7 +22,7 @@ export default {
         getIcon(icon) {
             return require('@/assets/'+icon)
         },        
-        changeSelection() {
+        toggleSelection() {
             this.isSelected = !this.isSelected;
         }
     }
