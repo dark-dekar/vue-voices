@@ -1,5 +1,6 @@
 <template>
   <div class="content-area custom-scrollbar">
+      <VoiceCategory :title="$t('categories.favorite')" :voices="favoriteVoices"/>
       <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
@@ -10,10 +11,12 @@ export default {
   name: 'ContentArea',
   data: function () {
     return {
-      voices: []
+      favoriteVoices:[],
+      voices: [],
     }
   },
   created() {
+    this.favoriteVoices = this.$root.$data.state.favorites;
     this.voices = this.$voicesService.getAllVoices();
   },
   components: {
