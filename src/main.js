@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import EN from './resources/i18n/en'
 import ES from './resources/i18n/es'
 import VoicesService from './services/VoicesService';
+import AppStore from './config/appStore';
 
 Vue.config.productionTip = false
 
@@ -26,6 +27,7 @@ const i18n = new VueI18n({
 new Vue({
   i18n,
   VoicesService,
+  data: AppStore,
   render: h => h(App)
 }).$mount('#app')
 
