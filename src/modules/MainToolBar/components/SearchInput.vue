@@ -10,14 +10,14 @@
 <script>
 export default {
     name: 'SearchInput',
-    props: {
-        searchTerm: String,
-    },
     data: function() {
         return {
             inputValue: '',
             debounce: this.$debounce(function(value) {this.$emit('update-searchterm',value)}, 200)
         }
+    },
+    created() {
+        this.inputValue = this.$route.query.searchTerm || '';
     },
     watch: {
         inputValue: function(newValue) {

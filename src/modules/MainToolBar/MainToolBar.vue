@@ -14,7 +14,13 @@ export default {
   },
   methods: {
     updateSearchterm(newSearchTerm) {
-      console.info(newSearchTerm);
+      newSearchTerm = newSearchTerm.trim()      
+      if(newSearchTerm === '') {
+        newSearchTerm = undefined
+      }
+      if (this.$route.query.searchTerm !== newSearchTerm) {
+        this.$router.replace({query: {searchTerm: newSearchTerm}});
+      }
     }
   }
 }
