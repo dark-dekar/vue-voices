@@ -23,7 +23,7 @@ export default {
     favoriteVoices: function (favorites){
       const ids = favorites.map(fav => fav.id);
       this.voices.forEach(fav => {
-        fav.isFavorite = ids.includes(fav.id)? true : false;
+        fav.isFavorite = ids.includes(fav.id);
       });
     }
   },
