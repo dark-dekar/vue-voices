@@ -3,13 +3,27 @@
     <div class="input-group-prepend">
         <img src="@/assets/search.svg" alt="search">
     </div>
-    <input type="text" class="form-control" :aria-label="$t('toolbar.search')">
+    <input type="text" class="form-control" :aria-label="$t('toolbar.search')" v-model="inputValue">
 </div>
 </template>
 
 <script>
 export default {
-    name: 'SearchInput'
+    name: 'SearchInput',
+    props: {
+        searchTerm: String,
+    },
+    data: function() {
+        return {
+            inputValue: '',
+            debounce: this.$debounce(function(value) {this.$emit('update-searchterm',value)}, 200)
+        }
+    },
+    watch: {
+        inputValue: function(newValue) {
+            this.debounce(newValue)
+        }
+    }
 }
 </script>
 

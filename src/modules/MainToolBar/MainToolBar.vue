@@ -1,6 +1,6 @@
 <template>
   <div class="main-toolbar">
-    <SearchInput/>
+    <SearchInput v-on:update-searchterm="updateSearchterm"/>
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: 'MainToolBar',
   components: {
     SearchInput
+  },
+  methods: {
+    updateSearchterm(newSearchTerm) {
+      console.info(newSearchTerm);
+    }
   }
 }
 </script>
