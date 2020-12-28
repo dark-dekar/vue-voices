@@ -1,8 +1,8 @@
 <template>
   <div :class="['voice-item', {'selected': isSelected}]">
       <div class="fav-img" @click="toggleFavorite()">
-        <img v-if="voice.isFavorite" src="@/assets/voice-favorite.svg" alt="Favorite">
-        <img v-else src="@/assets/voice-favorite-off.svg" alt="Favorite">
+        <img v-if="voice.isFavorite" src="@/assets/voice-favorite.svg" :alt="$t('voice.img_alt_fav')">
+        <img v-else src="@/assets/voice-favorite-off.svg" :alt="$t('voice.img_alt_no_fav')">
       </div>
       <div class="voice-icon" @click="toggleSelection()">
           <img :src="getIcon(voice.icon)" :alt="voice.name">
