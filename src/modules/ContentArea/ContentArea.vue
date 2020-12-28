@@ -21,14 +21,21 @@
       };
     },
     created() {
-      this.favoriteVoices = this.isFiltered(this.$route.query)
-        ? []
-        : this.$store.state.favorites;
-      this.voices = this.$voicesService.getAllVoices();
+      const queryParams = this.$route.query;
+      this.favoriteVoices = this.$store.state.favorites;
+      this.voices = this.isFiltered(queryParams)
+        ? this.getFilteredVoices(queryParams)
+        : this.$voicesService.getAllVoices();
     },
     methods: {
       isFiltered(queryParams) {
         return !!queryParams.searchTerm;
+      },
+      getFilteredVoices(queryParams) {
+        return this.$voicesService.getFilteredList(
+          this.favoriteVoices,
+          queryParams.searchTerm
+        );
       },
     },
     watch: {
@@ -41,6 +48,7 @@
       $route(to) {
         if (this.isFiltered(to.query)) {
           this.showFavorites = false;
+          this.voices = this.getFilteredVoices(to.query);
         } else {
           this.showFavorites = true;
         }
