@@ -1,5 +1,6 @@
 export default {
     toolbar: {
+        search: 'Search',
         all: 'All',
         popular: 'Popular',
         asc: 'Name ascending',
