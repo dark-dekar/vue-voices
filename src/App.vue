@@ -1,18 +1,16 @@
 <template>
   <div id="app">
     <MainToolBar/>
-    <ContentArea/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ContentArea from './modules/ContentArea/ContentArea';
 import MainToolBar from './modules/MainToolBar/MainToolBar';
 
 export default {
   name: 'App',
   components: {
-    ContentArea,
     MainToolBar
   },
 }
