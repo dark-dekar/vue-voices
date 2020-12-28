@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import EN from './resources/i18n/en'
 import ES from './resources/i18n/es'
 import VoicesService from './services/VoicesService';
+import DebounceService from './services/DebounceService';
 
 Vue.config.productionTip = false
 
@@ -17,6 +18,7 @@ const messages = {
 
 Vue.use(VueI18n)
 Vue.use(VoicesService)
+Vue.use(DebounceService)
 
 const i18n = new VueI18n({
   locale: 'en',
