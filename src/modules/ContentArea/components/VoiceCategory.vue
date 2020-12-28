@@ -5,7 +5,7 @@
           <div class="divisor"></div>
       </div>
       <div class="voice-list">
-          <VoiceItem v-for="voice in voices" :key="voice.id" :voice="voice" v-on:toggle-favorite="toggleFavoriteState"/>
+          <VoiceItem v-for="(voice, index) in voices" :key="voice.id" :voice="voice" v-on:toggle-favorite="toggleFavoriteState($event, index)"/>
       </div>
   </div>
 </template>
@@ -23,8 +23,12 @@ export default {
       VoiceItem
   },
   methods: {
-    toggleFavoriteState: function (event) {
-      console.log(event);
+    toggleFavoriteState: function (event, index) {
+      if (event) {
+        this.$store.commit('addFavoriteToList',this.voices[index]);
+      } else {
+        this.$store.commit('removeFavoritefromList', this.voices[index].id);
+      }
     }
   }
 

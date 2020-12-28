@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueI18n from 'vue-i18n'
+
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -27,7 +28,7 @@ const i18n = new VueI18n({
 new Vue({
   i18n,
   VoicesService,
-  data: AppStore,
+  store: AppStore,
   render: h => h(App)
 }).$mount('#app')
 
