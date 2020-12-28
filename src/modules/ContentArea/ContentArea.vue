@@ -1,6 +1,6 @@
 <template>
   <div class="content-area custom-scrollbar">
-      <VoiceCategory :title="$t('categories.favorite')" :voices="favoriteVoices"/>
+      <VoiceCategory v-if="favoriteVoices && favoriteVoices.length > 0" :title="$t('categories.favorite')" :voices="favoriteVoices"/>
       <VoiceCategory :title="$t('categories.pro')" :voices="voices"/>
   </div>
 </template>
@@ -16,8 +16,20 @@ export default {
     }
   },
   created() {
-    this.favoriteVoices = this.$root.$data.state.favorites;
+    this.favoriteVoices = this.$store.state.favorites;
     this.voices = this.$voicesService.getAllVoices();
+  },
+  watch: {
+    favoriteVoices: function (favorites){
+      const ids = favorites.map(fav => fav.id);
+      this.voices.forEach(fav => {
+        if(ids.includes(fav.id)) {
+          fav.isFavorite = true;
+        } else {
+          fav.isFavorite = false;
+        }
+      });
+    }
   },
   components: {
     VoiceCategory
