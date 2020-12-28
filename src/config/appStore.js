@@ -8,15 +8,15 @@ export default new Vuex.Store({
     },
     mutations: {
         setFavoriteList(state, newFavorites) {
-            if (newFavorites) {
+            if (newFavorites && Array.isArray(newFavorites)) {
                 state.favorites = newFavorites;
             } else {
                 console.error('New Favorite list is not valid');
             }
         },    
         addFavoriteToList(state, newFavorite) {
-            const favIndex = state.favorites.findIndex(fav => fav.id === newFavorite.id);
-            if (favIndex < 0) {
+            const favIndex = state.favorites.find(fav => fav.id === newFavorite.id);
+            if (!favIndex) {
                 state.favorites.push(newFavorite);
             }
         },    
