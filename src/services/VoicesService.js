@@ -2,6 +2,9 @@ import voicesData from '../resources/data/voices.json';
 
 class VoicesService {
     getAllVoices() {
+        voicesData.forEach(fav => {
+            fav.isFavorite = false;
+        });
         return voicesData;
     }
 }
