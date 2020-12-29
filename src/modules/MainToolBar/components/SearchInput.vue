@@ -1,5 +1,5 @@
 <template>
-  <div class="search-input input-group mb-3">
+  <div class="search-input input-group">
     <div class="input-group-prepend">
       <img src="@/assets/search.svg" :alt="$t('toolbar.search')" />
     </div>

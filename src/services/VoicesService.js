@@ -1,4 +1,4 @@
-import voicesData from "../resources/data/voices.json";
+import voicesData from '../resources/data/voices.json';
 
 class VoicesService {
   getAllVoices(favorites) {
@@ -19,6 +19,11 @@ class VoicesService {
       voice.isFavorite = ids.includes(voice.id);
     });
     return voicesData;
+  }
+  getAllCategories() {
+    const categories = [];
+    voicesData.forEach((voice) => categories.push(...voice.tags));
+    return [...new Set(categories)];
   }
 }
 
