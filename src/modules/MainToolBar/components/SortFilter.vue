@@ -1,9 +1,9 @@
 <template>
-  <div class="sort-filter input-group">
+  <div class="sort voice-filter input-group">
     <div class="filter-icon input-group-prepend">
       <img src="@/assets/order.svg" :alt="$t('toolbar.category')" />
     </div>
-    <select class="sort-select custom-select" v-model="selectedOrder">
+    <select class="filter-select custom-select" v-model="selectedOrder">
       <option
         v-for="(order, index) in filterOrders"
         :key="index"
@@ -45,32 +45,9 @@
 </script>
 
 <style lang="scss">
-  @import '@/resources/styles/colors.scss';
+  @import './select-styles.scss';
 
-  .sort-filter.input-group {
-    flex: none;
-    width: fit-content;
-    position: relative;
-    padding-left: 12px;
-
-    select,
-    option {
-      text-transform: capitalize;
-      color: $main-color;
-    }
-    .filter-icon {
-      margin-right: 8px;
-    }
-    select.sort-select {
-      border-radius: 5px;
-      border: 0;
-      background: black;
-    }
-
-    .select-arrow {
-      position: absolute;
-      top: 15px;
-      right: 9px;
-    }
+  .sort.voice-filter {
+    padding-left: 40px;
   }
 </style>

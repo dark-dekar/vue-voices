@@ -1,9 +1,9 @@
 <template>
-  <div class="category-filter input-group">
+  <div class="category voice-filter input-group">
     <div class="filter-icon input-group-prepend">
       <img src="@/assets/filter.svg" :alt="$t('toolbar.category')" />
     </div>
-    <select class="category-select custom-select" v-model="selectedCategory">
+    <select class="filter-select custom-select" v-model="selectedCategory">
       <option value=""> {{ $t('toolbar.all') }}</option>
       <option v-for="category in categories" :key="category" :value="category">
         {{ category }}
@@ -35,32 +35,9 @@
 </script>
 
 <style lang="scss">
-  @import '@/resources/styles/colors.scss';
+  @import './select-styles.scss';
 
-  .category-filter.input-group {
-    flex: none;
-    width: fit-content;
-    position: relative;
+  .category.voice-filter {
     padding-left: 12px;
-
-    select,
-    option {
-      text-transform: capitalize;
-      color: $main-color;
-    }
-    .filter-icon {
-      margin-right: 8px;
-    }
-    select.category-select {
-      border-radius: 5px;
-      border: 0;
-      background: black;
-    }
-
-    .select-arrow {
-      position: absolute;
-      top: 15px;
-      right: 9px;
-    }
   }
 </style>
