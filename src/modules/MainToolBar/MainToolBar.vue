@@ -5,6 +5,7 @@
       <CategoryFilter v-on:update-category="updateCategory" />
       <SortFilter v-on:update-sort="updateSort" />
     </div>
+    <img class="company-logo" src="@/assets/button-random.svg" />
   </div>
 </template>
 
@@ -51,6 +52,8 @@
 </script>
 
 <style lang="scss">
+  @import '@/resources/styles/breakpoints.scss';
+
   .main-toolbar {
     padding: 12px;
     display: flex;
@@ -59,6 +62,23 @@
       display: flex;
       flex: 1;
       justify-content: flex-end;
+    }
+
+    .company-logo {
+      padding-left: 24px;
+    }
+  }
+
+  @media (max-width: $mobile-device) {
+    .main-toolbar {
+      display: block;
+
+      .company-logo {
+        display: none;
+      }
+      .filters {
+        justify-content: flex-end;
+      }
     }
   }
 </style>

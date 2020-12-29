@@ -50,4 +50,10 @@
   .sort.voice-filter {
     padding-left: 40px;
   }
+
+  @media (max-width: $mobile-device) {
+    .sort.voice-filter {
+      padding-left: 12px;
+    }
+  }
 </style>

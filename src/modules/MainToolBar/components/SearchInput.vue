@@ -42,6 +42,7 @@
 
 <style lang="scss">
   @import '@/resources/styles/colors.scss';
+  @import '@/resources/styles/breakpoints.scss';
 
   .search-input {
     max-width: 252px;
@@ -61,6 +62,13 @@
     }
     .reset-icon {
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: $mobile-device) {
+    .search-input {
+      max-width: 100%;
+      margin-bottom: 8px;
     }
   }
 </style>
