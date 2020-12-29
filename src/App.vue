@@ -21,7 +21,7 @@
           this.$voicesService.getFavoriteVoices(favoriteIds)
         );
       } catch {
-        console.error('No valid favorites found');
+        console.log('No valid favorites found');
       }
     },
   };

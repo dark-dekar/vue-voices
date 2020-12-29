@@ -11,7 +11,20 @@ const messages = {
   es: ES,
 };
 
+function getBroserLanguage() {
+  let lang = window.navigator.language;
+
+  if (lang) {
+    if (lang.includes('-')) {
+      lang = lang.split('-')[0];
+    }
+    return lang;
+  }
+
+  return;
+}
+
 export default new VueI18n({
-  locale: 'en',
+  locale: getBroserLanguage() || 'en',
   messages,
 });
