@@ -23,9 +23,9 @@
       return {
         selectedOrder: 0,
         filterOrders: [
-          { name: this.$t('toolbar.popular'), value: 0 },
-          { name: this.$t('toolbar.asc'), value: 1 },
-          { name: this.$t('toolbar.des'), value: 2 },
+          { name: this.$t('toolbar.popular'), value: '' },
+          { name: this.$t('toolbar.asc'), value: 'asc' },
+          { name: this.$t('toolbar.desc'), value: 'desc' },
         ],
       };
     },
@@ -33,11 +33,11 @@
       this.selectedOrder =
         this.filterOrders.find(
           (order) => order.value === this.$route.query.sort
-        ) || 0;
+        )?.value || '';
     },
     watch: {
       selectedOrder: function(newValue) {
-        if (newValue === 0) newValue = undefined;
+        if (newValue === '') newValue = undefined;
         this.$emit('update-sort', newValue);
       },
     },
