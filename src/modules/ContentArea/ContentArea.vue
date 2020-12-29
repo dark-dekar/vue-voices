@@ -51,6 +51,7 @@
           this.voices = this.getFilteredVoices(to.query);
         } else {
           this.showFavorites = true;
+          this.voices = this.$voicesService.getAllVoices(this.favoriteVoices);
         }
       },
     },

@@ -1,9 +1,10 @@
 import voicesData from "../resources/data/voices.json";
 
 class VoicesService {
-  getAllVoices() {
+  getAllVoices(favorites) {
+    const ids = (favorites || []).map((fav) => fav.id);
     voicesData.forEach((voice) => {
-      voice.isFavorite = false;
+      voice.isFavorite = ids.includes(voice.id);
     });
     return voicesData;
   }
@@ -14,8 +15,8 @@ class VoicesService {
       );
     }
     const ids = favorites.map((fav) => fav.id);
-    voicesData.forEach((fav) => {
-      fav.isFavorite = ids.includes(fav.id);
+    voicesData.forEach((voice) => {
+      voice.isFavorite = ids.includes(voice.id);
     });
     return voicesData;
   }
