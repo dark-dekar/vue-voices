@@ -45,8 +45,8 @@
 </script>
 
 <style lang="scss">
-  @import '@/assets/styles/colors.scss';
-  @import '@/assets/styles/breakpoints.scss';
+  @import '@/resources/styles/colors.scss';
+  @import '@/resources/styles/breakpoints.scss';
 
   .voice-item {
     position: relative;

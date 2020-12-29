@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss">
-  @import '@/assets/styles/breakpoints.scss';
+  @import '@/resources/styles/breakpoints.scss';
 
   .voice-category {
     padding: 24px 86px 0 36px;

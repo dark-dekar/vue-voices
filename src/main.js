@@ -2,23 +2,23 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import App from './App.vue';
-import EN from './assets/i18n/en';
-import ES from './assets/i18n/es';
+import EN from './resources/i18n/en';
+import ES from './resources/i18n/es';
 import VoicesService from './services/VoicesService';
 import DebounceService from './services/DebounceService';
 import AppStore from './config/appStore';
 import Routes from './config/routes';
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
 
 const messages = {
   en: EN,
   es: ES,
-};
+}
 
 Vue.use(VueI18n);
 Vue.use(VoicesService);
@@ -31,14 +31,15 @@ const i18n = new VueI18n({
 });
 
 const router = new VueRouter({
-  mode: 'history',
-  routes: Routes,
-});
+  mode: "history",
+  routes: Routes 
+})
 
 new Vue({
   i18n,
   VoicesService,
   store: AppStore,
   router,
-  render: (h) => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount('#app')
+
