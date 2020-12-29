@@ -52,6 +52,8 @@
 </script>
 
 <style lang="scss">
+  @import '@/resources/styles/breakpoints.scss';
+
   .main-toolbar {
     padding: 12px;
     display: flex;
@@ -64,6 +66,19 @@
 
     .company-logo {
       padding-left: 24px;
+    }
+  }
+
+  @media (max-width: $mobile-device) {
+    .main-toolbar {
+      display: block;
+
+      .company-logo {
+        display: none;
+      }
+      .filters {
+        justify-content: flex-end;
+      }
     }
   }
 </style>
