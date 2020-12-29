@@ -5,6 +5,7 @@
       <CategoryFilter v-on:update-category="updateCategory" />
       <SortFilter v-on:update-sort="updateSort" />
     </div>
+    <img class="company-logo" src="@/assets/button-random.svg" />
   </div>
 </template>
 
@@ -59,6 +60,10 @@
       display: flex;
       flex: 1;
       justify-content: flex-end;
+    }
+
+    .company-logo {
+      padding-left: 24px;
     }
   }
 </style>
