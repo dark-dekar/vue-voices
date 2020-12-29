@@ -31,13 +31,16 @@
     },
     methods: {
       isFiltered(queryParams) {
-        return queryParams.searchTerm || queryParams.category;
+        return (
+          queryParams.searchTerm || queryParams.category || queryParams.sort
+        );
       },
       getFilteredVoices(queryParams) {
         return this.$voicesService.getFilteredList(
           this.favoriteVoices,
           queryParams.searchTerm,
-          queryParams.category
+          queryParams.category,
+          queryParams.sort
         );
       },
     },

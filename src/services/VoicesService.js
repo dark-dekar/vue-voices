@@ -8,7 +8,8 @@ class VoicesService {
     });
     return voicesData;
   }
-  getFilteredList(favorites, searchTerm, category) {
+
+  getFilteredList(favorites, searchTerm, category, sort) {
     const ids = favorites.map((fav) => fav.id);
     let voices = voicesData;
     if (category) {
@@ -19,15 +20,34 @@ class VoicesService {
         voice.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
+    if (sort) {
+      voices = this._sortVoices(voices);
+      if (sort === 'desc') {
+        voices.reverse();
+      }
+    }
     voices.forEach((voice) => {
       voice.isFavorite = ids.includes(voice.id);
     });
     return voices;
   }
+
   getAllCategories() {
     const categories = [];
     voicesData.forEach((voice) => categories.push(...voice.tags));
     return [...new Set(categories)];
+  }
+
+  _sortVoices(voices) {
+    return voices.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
   }
 }
 
