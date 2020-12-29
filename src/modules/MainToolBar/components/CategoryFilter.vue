@@ -27,7 +27,6 @@
     },
     watch: {
       selectedCategory: function(newValue) {
-        console.info(newValue);
         if (newValue === '') newValue = undefined;
         this.$emit('update-category', newValue);
       },

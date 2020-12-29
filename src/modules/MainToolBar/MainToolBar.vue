@@ -24,12 +24,16 @@
           newSearchTerm = undefined;
         }
         if (this.$route.query.searchTerm !== newSearchTerm) {
-          this.$router.replace({ query: { searchTerm: newSearchTerm } });
+          const query = { ...this.$route.query };
+          query.searchTerm = newSearchTerm;
+          this.$router.replace({ query: query });
         }
       },
       updateCategory(newCategory) {
         if (this.$route.query.category !== newCategory) {
-          this.$router.replace({ query: { category: newCategory } });
+          const query = { ...this.$route.query };
+          query.category = newCategory;
+          this.$router.replace({ query: query });
         }
       },
     },
