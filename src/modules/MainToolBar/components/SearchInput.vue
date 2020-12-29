@@ -1,5 +1,5 @@
 <template>
-  <div class="search-input input-group mb-3">
+  <div class="search-input input-group">
     <div class="input-group-prepend">
       <img src="@/assets/search.svg" :alt="$t('toolbar.search')" />
     </div>
@@ -44,6 +44,7 @@
   @import '@/resources/styles/colors.scss';
 
   .search-input {
+    max-width: 252px;
     background-color: black;
     padding-right: 12px;
     border-radius: 20px;

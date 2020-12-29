@@ -1,4 +1,4 @@
-import voicesData from "../resources/data/voices.json";
+import voicesData from '../resources/data/voices.json';
 
 class VoicesService {
   getAllVoices(favorites) {
@@ -8,17 +8,26 @@ class VoicesService {
     });
     return voicesData;
   }
-  getFilteredList(favorites, searchTerm) {
+  getFilteredList(favorites, searchTerm, category) {
+    const ids = favorites.map((fav) => fav.id);
+    let voices = voicesData;
+    if (category) {
+      voices = voices.filter((voice) => voice.tags.includes(category));
+    }
     if (searchTerm) {
-      return voicesData.filter((fav) =>
-        fav.name.toLowerCase().includes(searchTerm.toLowerCase())
+      voices = voices.filter((voice) =>
+        voice.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    const ids = favorites.map((fav) => fav.id);
-    voicesData.forEach((voice) => {
+    voices.forEach((voice) => {
       voice.isFavorite = ids.includes(voice.id);
     });
-    return voicesData;
+    return voices;
+  }
+  getAllCategories() {
+    const categories = [];
+    voicesData.forEach((voice) => categories.push(...voice.tags));
+    return [...new Set(categories)];
   }
 }
 
