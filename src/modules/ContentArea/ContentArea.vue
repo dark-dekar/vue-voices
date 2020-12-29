@@ -10,9 +10,9 @@
 </template>
 
 <script>
-  import VoiceCategory from "./components/VoiceCategory";
+  import VoiceCategory from './components/VoiceCategory';
   export default {
-    name: "ContentArea",
+    name: 'ContentArea',
     data: function() {
       return {
         showFavorites: true,
@@ -22,19 +22,22 @@
     },
     created() {
       const queryParams = this.$route.query;
+      const isFiltered = this.isFiltered(queryParams);
+      this.showFavorites = !isFiltered;
       this.favoriteVoices = this.$store.state.favorites;
-      this.voices = this.isFiltered(queryParams)
+      this.voices = isFiltered
         ? this.getFilteredVoices(queryParams)
         : this.$voicesService.getAllVoices();
     },
     methods: {
       isFiltered(queryParams) {
-        return !!queryParams.searchTerm;
+        return queryParams.searchTerm || queryParams.category;
       },
       getFilteredVoices(queryParams) {
         return this.$voicesService.getFilteredList(
           this.favoriteVoices,
-          queryParams.searchTerm
+          queryParams.searchTerm,
+          queryParams.category
         );
       },
     },
