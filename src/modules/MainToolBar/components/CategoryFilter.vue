@@ -1,14 +1,15 @@
 <template>
   <div class="category-filter input-group">
-    <div class="input-group-prepend">
-      <label class="input-group-text">Options</label>
+    <div class="filter-icon input-group-prepend">
+      <img src="@/assets/filter.svg" :alt="$t('toolbar.category')" />
     </div>
-    <select class="custom-select" v-model="selectedCategory">
+    <select class="category-select custom-select" v-model="selectedCategory">
       <option value=""> {{ $t('toolbar.all') }}</option>
       <option v-for="category in categories" :key="category" :value="category">
         {{ category }}
       </option>
     </select>
+    <img class="select-arrow" src="@/assets/select-arrow.svg" />
   </div>
 </template>
 
@@ -35,10 +36,30 @@
 </script>
 
 <style lang="scss">
-  .category-filter {
+  @import '@/resources/styles/colors.scss';
+
+  .category-filter.input-group {
+    position: relative;
+    padding-left: 12px;
+
     select,
     option {
       text-transform: capitalize;
+      color: $main-color;
+    }
+    .filter-icon {
+      margin-right: 8px;
+    }
+    select.category-select {
+      border-radius: 5px;
+      border: 0;
+      background: black;
+    }
+
+    .select-arrow {
+      position: absolute;
+      top: 15px;
+      right: 9px;
     }
   }
 </style>
