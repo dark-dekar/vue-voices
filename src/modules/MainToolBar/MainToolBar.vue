@@ -3,6 +3,7 @@
     <SearchInput v-on:update-searchterm="updateSearchterm" />
     <div class="filters">
       <CategoryFilter v-on:update-category="updateCategory" />
+      <SortFilter v-on:update-sort="updateSort" />
     </div>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
   import SearchInput from './components/SearchInput';
   import CategoryFilter from './components/CategoryFilter';
+  import SortFilter from './components/SortFilter';
 
   export default {
     name: 'MainToolBar',
     components: {
       SearchInput,
       CategoryFilter,
+      SortFilter,
     },
     methods: {
       updateSearchterm(newSearchTerm) {
@@ -33,6 +36,13 @@
         if (this.$route.query.category !== newCategory) {
           const query = { ...this.$route.query };
           query.category = newCategory;
+          this.$router.replace({ query: query });
+        }
+      },
+      updateSort(newSort) {
+        if (this.$route.query.sort !== newSort) {
+          const query = { ...this.$route.query };
+          query.sort = newSort;
           this.$router.replace({ query: query });
         }
       },

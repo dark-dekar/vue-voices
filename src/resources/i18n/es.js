@@ -6,7 +6,7 @@ export default {
     all: 'Todos',
     popular: 'Popular',
     asc: 'Nombre ascendente',
-    des: 'Nombre descendente',
+    desc: 'Nombre descendente',
   },
   categories: {
     favorite: 'favorite voices',

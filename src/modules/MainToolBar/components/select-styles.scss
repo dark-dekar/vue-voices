@@ -1,0 +1,27 @@
+@import '@/resources/styles/colors.scss';
+
+.voice-filter.input-group {
+  flex: none;
+  width: fit-content;
+  position: relative;
+
+  select,
+  option {
+    text-transform: capitalize;
+    color: $main-color;
+  }
+  .filter-icon {
+    margin-right: 8px;
+  }
+  select.filter-select {
+    border-radius: 5px;
+    border: 0;
+    background: black;
+  }
+
+  .select-arrow {
+    position: absolute;
+    top: 15px;
+    right: 9px;
+  }
+}
