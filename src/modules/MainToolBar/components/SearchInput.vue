@@ -44,6 +44,7 @@
   @import '@/resources/styles/colors.scss';
 
   .search-input {
+    max-width: 252px;
     background-color: black;
     padding-right: 12px;
     border-radius: 20px;

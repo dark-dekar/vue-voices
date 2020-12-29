@@ -1,7 +1,9 @@
 <template>
   <div class="main-toolbar">
     <SearchInput v-on:update-searchterm="updateSearchterm" />
-    <CategoryFilter v-on:update-category="updateCategory" />
+    <div class="filters">
+      <CategoryFilter v-on:update-category="updateCategory" />
+    </div>
   </div>
 </template>
 
@@ -37,5 +39,12 @@
 <style lang="scss">
   .main-toolbar {
     padding: 12px;
+    display: flex;
+
+    .filters {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
   }
 </style>

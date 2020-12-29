@@ -39,6 +39,8 @@
   @import '@/resources/styles/colors.scss';
 
   .category-filter.input-group {
+    flex: none;
+    width: fit-content;
     position: relative;
     padding-left: 12px;
 
