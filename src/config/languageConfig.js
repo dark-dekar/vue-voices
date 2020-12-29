@@ -26,5 +26,6 @@ function getBroserLanguage() {
 
 export default new VueI18n({
   locale: getBroserLanguage() || 'en',
+  fallbackLocale: 'en',
   messages,
 });
