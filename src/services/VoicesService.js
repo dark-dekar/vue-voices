@@ -1,4 +1,4 @@
-import voicesData from '../resources/data/voices.json';
+import voicesData from '@/assets/data/voices.json';
 
 class VoicesService {
   getAllVoices(favorites) {

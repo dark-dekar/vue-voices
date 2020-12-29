@@ -41,8 +41,8 @@
 </script>
 
 <style lang="scss">
-  @import '@/resources/styles/colors.scss';
-  @import '@/resources/styles/breakpoints.scss';
+  @import '@/assets/styles/colors.scss';
+  @import '@/assets/styles/breakpoints.scss';
 
   .search-input {
     max-width: 252px;

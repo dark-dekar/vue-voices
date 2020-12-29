@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss">
-  @import '@/resources/styles/breakpoints.scss';
+  @import '@/assets/styles/breakpoints.scss';
 
   .main-toolbar {
     padding: 12px;
