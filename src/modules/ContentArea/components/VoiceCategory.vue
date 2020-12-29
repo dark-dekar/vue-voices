@@ -40,6 +40,8 @@
 </script>
 
 <style lang="scss">
+  @import '@/resources/styles/breakpoints.scss';
+
   .voice-category {
     padding: 24px 86px 0 36px;
     flex: 1;
@@ -73,8 +75,14 @@
       display: flex;
       flex: 1;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-evenly;
       padding: 12px 0 24px;
+    }
+  }
+
+  @media (max-width: $mobile-device) {
+    .voice-category {
+      padding: 0 20px 0 0;
     }
   }
 </style>
