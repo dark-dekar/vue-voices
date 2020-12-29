@@ -38,6 +38,16 @@ class VoicesService {
     return [...new Set(categories)];
   }
 
+  getFavoriteVoices(favoriteIds) {
+    const filteredList = voicesData.filter((voice) =>
+      favoriteIds.includes(voice.id)
+    );
+    filteredList.forEach((voice) => {
+      voice.isFavorite = true;
+    });
+    return filteredList;
+  }
+
   _sortVoices(voices) {
     return voices.sort((a, b) => {
       if (a.name > b.name) {

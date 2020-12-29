@@ -13,6 +13,17 @@
     components: {
       MainToolBar,
     },
+    created() {
+      try {
+        const favoriteIds = JSON.parse(localStorage.getItem('favorites'));
+        this.$store.commit(
+          'setFavoriteList',
+          this.$voicesService.getFavoriteVoices(favoriteIds)
+        );
+      } catch {
+        console.error('No valid favorites found');
+      }
+    },
   };
 </script>
 
