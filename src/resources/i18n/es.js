@@ -9,8 +9,8 @@ export default {
     desc: 'Nombre descendente',
   },
   categories: {
-    favorite: 'favorite voices',
-    pro: 'pro voices',
+    favorite: 'voces favoritas',
+    pro: 'voces profesionales',
   },
   voice: {
     img_alt_fav: 'Favorito',

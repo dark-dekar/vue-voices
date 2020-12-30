@@ -48,7 +48,7 @@
   @import './select-styles.scss';
 
   .sort.voice-filter {
-    padding-left: 40px;
+    padding-left: 24px;
   }
 
   @media (max-width: $mobile-device) {
