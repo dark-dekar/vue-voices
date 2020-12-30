@@ -5,8 +5,10 @@
       <CategoryFilter v-on:update-category="updateCategory" />
       <SortFilter v-on:update-sort="updateSort" />
     </div>
-    <ChangeLanguage />
-    <img class="company-logo" src="@/assets/button-random.svg" />
+    <div class="toolbar-buttons">
+      <ChangeLanguage />
+      <RandomButton />
+    </div>
   </div>
 </template>
 
@@ -15,6 +17,7 @@
   import CategoryFilter from './components/CategoryFilter';
   import SortFilter from './components/SortFilter';
   import ChangeLanguage from './components/ChangeLanguage';
+  import RandomButton from './components/RandomButton';
 
   export default {
     name: 'MainToolBar',
@@ -23,6 +26,7 @@
       CategoryFilter,
       SortFilter,
       ChangeLanguage,
+      RandomButton,
     },
     methods: {
       updateSearchterm(newSearchTerm) {
@@ -66,21 +70,24 @@
       flex: 1;
       justify-content: flex-end;
     }
-
-    .company-logo {
-      padding-left: 12px;
-    }
   }
 
   @media (max-width: $mobile-device) {
     .main-toolbar {
       display: block;
-
-      .company-logo {
-        display: none;
-      }
       .filters {
         justify-content: flex-end;
+      }
+
+      .toolbar-buttons {
+        background-color: black;
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        bottom: 12px;
+        left: 12px;
+        padding: 12px;
+        border-radius: 50px;
       }
     }
   }
