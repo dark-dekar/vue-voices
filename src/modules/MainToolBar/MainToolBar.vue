@@ -5,6 +5,7 @@
       <CategoryFilter v-on:update-category="updateCategory" />
       <SortFilter v-on:update-sort="updateSort" />
     </div>
+    <ChangeLanguage />
     <img class="company-logo" src="@/assets/button-random.svg" />
   </div>
 </template>
@@ -13,6 +14,7 @@
   import SearchInput from './components/SearchInput';
   import CategoryFilter from './components/CategoryFilter';
   import SortFilter from './components/SortFilter';
+  import ChangeLanguage from './components/ChangeLanguage';
 
   export default {
     name: 'MainToolBar',
@@ -20,6 +22,7 @@
       SearchInput,
       CategoryFilter,
       SortFilter,
+      ChangeLanguage,
     },
     methods: {
       updateSearchterm(newSearchTerm) {
@@ -65,7 +68,7 @@
     }
 
     .company-logo {
-      padding-left: 24px;
+      padding-left: 12px;
     }
   }
 
