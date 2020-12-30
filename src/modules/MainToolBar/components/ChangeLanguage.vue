@@ -1,5 +1,5 @@
 <template>
-  <div class="change-language">
+  <div :class="['change-language', { dropup: isHandset }]">
     <img
       class="dropdown-toggle"
       data-toggle="dropdown"
@@ -24,9 +24,17 @@
     name: 'ChangeLanguage',
     data: function() {
       return {
+        isHandset: false,
         selectedLang: this.$i18n.locale,
         availableLanguages: this.$i18n.availableLocales,
       };
+    },
+    created() {
+      this.isMobile();
+      window.addEventListener('resize', this.isMobile);
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.isMobile);
     },
     methods: {
       toggleLanguage(lang) {
@@ -35,12 +43,19 @@
           this.selectedLang = lang;
         }
       },
+      isMobile() {
+        const isMobile = window.matchMedia(
+          'only screen and (max-width: 768px)'
+        );
+        this.isHandset = isMobile.matches ? true : false;
+      },
     },
   };
 </script>
 
 <style lang="scss">
   @import '@/resources/styles/colors.scss';
+  @import '@/resources/styles/breakpoints.scss';
 
   .change-language {
     display: flex;
@@ -62,6 +77,18 @@
           font-weight: 600;
         }
       }
+    }
+  }
+
+  @media (max-width: $mobile-device) {
+    .change-language {
+      position: absolute;
+      z-index: 1;
+      bottom: 12px;
+      left: 12px;
+      padding: 12px;
+      border-radius: 50px;
+      background-color: black;
     }
   }
 </style>
