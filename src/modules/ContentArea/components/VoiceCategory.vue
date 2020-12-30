@@ -10,6 +10,7 @@
         :key="voice.id"
         :voice="voice"
         v-on:toggle-favorite="toggleFavoriteState($event, index)"
+        :ref="voice.id"
       />
     </div>
   </div>
@@ -23,9 +24,20 @@
     props: {
       title: String,
       voices: Array,
+      isFavoriteCategory: Boolean,
     },
     components: {
       VoiceItem,
+    },
+    created() {
+      if (!this.isFavoriteCategory) {
+        window.addEventListener('select-random', this.selectItem);
+      }
+    },
+    destroyed() {
+      if (!this.isFavoriteCategory) {
+        window.removeEventListener('select-random', () => {});
+      }
     },
     methods: {
       toggleFavoriteState: function(event, index) {
@@ -33,6 +45,13 @@
           this.$store.commit('addFavoriteToList', this.voices[index]);
         } else {
           this.$store.commit('removeFavoritefromList', this.voices[index].id);
+        }
+      },
+      selectItem(e) {
+        const item = this.$refs[e.detail];
+
+        if (item && item.length > 0) {
+          item[0].isSelected = true;
         }
       },
     },

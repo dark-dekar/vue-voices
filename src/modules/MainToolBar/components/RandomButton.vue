@@ -9,7 +9,9 @@
     name: 'RandomButton',
     methods: {
       selectRandom() {
-        window.dispatchEvent(new CustomEvent('select-random', { detail: 1 }));
+        window.dispatchEvent(
+          new CustomEvent('select-random', { detail: '8bits' })
+        );
       },
     },
   };

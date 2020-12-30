@@ -4,8 +4,13 @@
       v-if="showFavorites && favoriteVoices && favoriteVoices.length > 0"
       :title="$t('categories.favorite')"
       :voices="favoriteVoices"
+      :isFavoriteCategory="true"
     />
-    <VoiceCategory :title="$t('categories.pro')" :voices="voices" />
+    <VoiceCategory
+      :title="$t('categories.pro')"
+      :voices="voices"
+      ref="proVoices"
+    />
   </div>
 </template>
 
@@ -28,10 +33,6 @@
       this.voices = isFiltered
         ? this.getFilteredVoices(queryParams)
         : this.$voicesService.getAllVoices();
-      window.addEventListener('select-random', this.selectItem);
-    },
-    destroyed() {
-      window.removeEventListener('select-random', () => {});
     },
     methods: {
       isFiltered(queryParams) {
@@ -46,10 +47,6 @@
           queryParams.category,
           queryParams.sort
         );
-      },
-      selectItem(e) {
-        console.info(e);
-        console.info(e.detail);
       },
     },
     watch: {
