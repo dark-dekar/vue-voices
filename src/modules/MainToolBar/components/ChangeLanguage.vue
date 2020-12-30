@@ -82,13 +82,7 @@
 
   @media (max-width: $mobile-device) {
     .change-language {
-      position: absolute;
-      z-index: 1;
-      bottom: 12px;
-      left: 12px;
-      padding: 12px;
-      border-radius: 50px;
-      background-color: black;
+      padding: 0 14px 0 4px;
     }
   }
 </style>
