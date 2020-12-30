@@ -1,5 +1,5 @@
 <template>
-  <div class="random-button">
+  <div class="random-button" @click="selectRandom">
     <img src="@/assets/button-random.svg" />
   </div>
 </template>
@@ -7,7 +7,11 @@
 <script>
   export default {
     name: 'RandomButton',
-    methods: {},
+    methods: {
+      selectRandom() {
+        window.dispatchEvent(new CustomEvent('select-random', { detail: 1 }));
+      },
+    },
   };
 </script>
 
@@ -16,6 +20,7 @@
 
   .random-button {
     padding-left: 12px;
+    cursor: pointer;
   }
 
   @media (max-width: $mobile-device) {

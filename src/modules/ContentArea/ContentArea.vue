@@ -28,6 +28,10 @@
       this.voices = isFiltered
         ? this.getFilteredVoices(queryParams)
         : this.$voicesService.getAllVoices();
+      window.addEventListener('select-random', this.selectItem);
+    },
+    destroyed() {
+      window.removeEventListener('select-random', () => {});
     },
     methods: {
       isFiltered(queryParams) {
@@ -42,6 +46,10 @@
           queryParams.category,
           queryParams.sort
         );
+      },
+      selectItem(e) {
+        console.info(e);
+        console.info(e.detail);
       },
     },
     watch: {
