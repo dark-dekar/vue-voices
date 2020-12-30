@@ -1,6 +1,8 @@
 # Vue Voices
 
 ## About the tech test App
+Technical test application that loads a list of 'voices' from a json and let the user add them to the favorite category.
+
 Core Framework: Vue.js
 Style Framework: Bootstrap
 CSS Preprocessor: SASS
@@ -25,6 +27,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
