@@ -6,11 +6,7 @@
       :voices="favoriteVoices"
       :isFavoriteCategory="true"
     />
-    <VoiceCategory
-      :title="$t('categories.pro')"
-      :voices="voices"
-      ref="proVoices"
-    />
+    <VoiceCategory :title="$t('categories.pro')" :voices="voices" />
   </div>
 </template>
 

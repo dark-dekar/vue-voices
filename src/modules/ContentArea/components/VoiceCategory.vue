@@ -48,13 +48,15 @@
         }
       },
       selectRandomItem() {
-        const randomIndex = Math.floor(
-          Math.random() * (this.voices.length - 0)
-        );
-        const item = this.$refs[this.voices[randomIndex].id];
+        if (this.voices.length > 0) {
+          const randomIndex = Math.floor(
+            Math.random() * (this.voices.length - 0)
+          );
+          const item = this.$refs[this.voices[randomIndex].id];
 
-        if (item && item.length > 0) {
-          item[0].isSelected = true;
+          if (item && item.length > 0) {
+            item[0].isSelected = true;
+          }
         }
       },
     },

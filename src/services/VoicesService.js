@@ -48,11 +48,6 @@ class VoicesService {
     return filteredList;
   }
 
-  getRandomId() {
-    const randomIndex = Math.floor(Math.random() * (voicesData.length - 0));
-    return voicesData[randomIndex].id;
-  }
-
   _sortVoices(voices) {
     return voices.sort((a, b) => {
       if (a.name > b.name) {
