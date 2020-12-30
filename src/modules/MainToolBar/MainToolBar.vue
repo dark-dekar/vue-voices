@@ -70,6 +70,9 @@
       flex: 1;
       justify-content: flex-end;
     }
+    .toolbar-buttons {
+      display: flex;
+    }
   }
 
   @media (max-width: $mobile-device) {
