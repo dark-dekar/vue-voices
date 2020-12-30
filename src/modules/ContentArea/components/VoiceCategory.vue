@@ -31,7 +31,7 @@
     },
     created() {
       if (!this.isFavoriteCategory) {
-        window.addEventListener('select-random', this.selectItem);
+        window.addEventListener('select-random', this.selectRandomItem);
       }
     },
     destroyed() {
@@ -47,8 +47,11 @@
           this.$store.commit('removeFavoritefromList', this.voices[index].id);
         }
       },
-      selectItem(e) {
-        const item = this.$refs[e.detail];
+      selectRandomItem() {
+        const randomIndex = Math.floor(
+          Math.random() * (this.voices.length - 0)
+        );
+        const item = this.$refs[this.voices[randomIndex].id];
 
         if (item && item.length > 0) {
           item[0].isSelected = true;
