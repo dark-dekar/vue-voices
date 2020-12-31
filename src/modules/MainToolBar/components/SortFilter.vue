@@ -18,11 +18,6 @@
     data: function() {
       return {
         selectedOrder: '',
-        filterOrders: [
-          { name: this.$t('toolbar.popular'), value: '' },
-          { name: this.$t('toolbar.asc'), value: 'asc' },
-          { name: this.$t('toolbar.desc'), value: 'desc' },
-        ],
       };
     },
     created() {
