@@ -4,13 +4,9 @@
       <img src="@/assets/order.svg" :alt="$t('toolbar.category')" />
     </div>
     <select class="filter-select custom-select" v-model="selectedOrder">
-      <option
-        v-for="(order, index) in filterOrders"
-        :key="index"
-        :value="order.value"
-      >
-        {{ order.name }}
-      </option>
+      <option value="">{{ $t('toolbar.popular') }}</option>
+      <option value="asc">{{ $t('toolbar.asc') }}</option>
+      <option value="desc">{{ $t('toolbar.desc') }}</option>
     </select>
     <img class="select-arrow" src="@/assets/select-arrow.svg" />
   </div>
@@ -21,19 +17,11 @@
     name: 'SortFilter',
     data: function() {
       return {
-        selectedOrder: 0,
-        filterOrders: [
-          { name: this.$t('toolbar.popular'), value: '' },
-          { name: this.$t('toolbar.asc'), value: 'asc' },
-          { name: this.$t('toolbar.desc'), value: 'desc' },
-        ],
+        selectedOrder: '',
       };
     },
     created() {
-      this.selectedOrder =
-        this.filterOrders.find(
-          (order) => order.value === this.$route.query.sort
-        )?.value || '';
+      this.selectedOrder = this.$route.query.sort || '';
     },
     watch: {
       selectedOrder: function(newValue) {
@@ -48,7 +36,7 @@
   @import './select-styles.scss';
 
   .sort.voice-filter {
-    padding-left: 40px;
+    padding-left: 24px;
   }
 
   @media (max-width: $mobile-device) {

@@ -4,6 +4,7 @@
       v-if="showFavorites && favoriteVoices && favoriteVoices.length > 0"
       :title="$t('categories.favorite')"
       :voices="favoriteVoices"
+      :isFavoriteCategory="true"
     />
     <VoiceCategory :title="$t('categories.pro')" :voices="voices" />
   </div>
